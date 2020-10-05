@@ -1,0 +1,76 @@
+--- libbs2b-3.1.0/src/bs2bconvert.c.orig	2009-06-04 20:01:15.000000000 +0200
++++ libbs2b-3.1.0/src/bs2bconvert.c	2020-10-05 15:00:34.332595456 +0200
+@@ -146,20 +146,20 @@
+ 
+ 	if( strcmp( infilename, outfilename ) == 0 )
+ 	{
+-		printf( "Error : Input and output filenames are the same.\n\n" );
++		fprintf( stderr, "Error : Input and output filenames are the same.\n\n" );
+ 		return 1;
+ 	}
+ 	
+ 	if( ( infile = sf_open( infilename, SFM_READ, &sfinfo ) ) == NULL )
+ 	{
+-		printf( "Not able to open input file %s.\n", infilename );
+-		printf( sf_strerror( NULL ) );
++		fprintf( stderr, "Not able to open input file %s.\n", infilename );
++		fprintf( stderr, sf_strerror( NULL ) );
+ 		return 1;
+ 	}
+ 
+ 	if( sfinfo.channels != 2 )
+ 	{
+-		printf( "Input file is not a stereo.\n" );
++		fprintf( stderr, "Input file is not a stereo.\n" );
+ 		sf_close( infile );
+ 		return 1;
+ 	}
+@@ -168,7 +168,7 @@
+ 
+ 	if( srate < BS2B_MINSRATE || srate > BS2B_MAXSRATE )
+ 	{
+-		printf( "Not supported sample rate '%d'.\n", srate );
++		fprintf( stderr, "Not supported sample rate '%d'.\n", srate );
+ 		sf_close( infile );
+ 		return 1;
+ 	}
+@@ -176,7 +176,7 @@
+ 	/* Open the output file. */
+ 	if( ( outfile = sf_open( outfilename, SFM_WRITE, &sfinfo ) ) == NULL )
+ 	{
+-		printf( "Not able to open output file %s : %s\n",
++		fprintf( stderr, "Not able to open output file %s : %s\n",
+ 			outfilename, sf_strerror( NULL ) );
+ 		sf_close( infile );
+ 		return 1;
+@@ -184,7 +184,7 @@
+ 
+ 	if( NULL == ( bs2bdp = bs2b_open() ) )
+ 	{
+-		printf( "Not able to allocate data\n" );
++		fprintf( stderr, "Not able to allocate data\n" );
+ 		sf_close( infile );
+ 		sf_close( outfile );
+ 		return 1;
+@@ -193,10 +193,10 @@
+ 	bs2b_set_srate( bs2bdp, srate );
+ 	bs2b_set_level( bs2bdp, level );
+ 
+-	printf( "Crossfeed level: %.1f dB, %d Hz, %d us.\n",
++	fprintf( stderr, "Crossfeed level: %.1f dB, %d Hz, %d us.\n",
+ 		( double )bs2b_get_level_feed( bs2bdp ) / 10.0,
+ 		bs2b_get_level_fcut( bs2bdp ), bs2b_get_level_delay( bs2bdp ) );
+-	printf( "Converting file '%s' to file '%s'\nsample rate = %u...",
++	fprintf( stderr, "Converting file '%s' to file '%s'\nsample rate = %u...",
+ 		infilename, outfilename, bs2b_get_srate( bs2bdp ) );
+ 
+ 	copy_metadata( outfile, infile );
+@@ -209,7 +209,7 @@
+ 	sf_close( infile );
+ 	sf_close( outfile );
+ 
+-	printf( " Done.\n" );
++	fprintf( stderr, " Done.\n" );
+ 
+ 	return 0;
+ } /* main() */

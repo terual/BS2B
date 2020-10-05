@@ -1,0 +1,10 @@
+# String file for BS2B plugin
+
+PLUGIN_BS2B
+	EN	Bauer stereophonic-to-binaural DSP
+
+PLUGIN_BS2B_DESC
+	EN	Bauer stereophonic-to-binaural DSP: headphone filter
+
+PLUGIN_BS2B_ENABLE
+	EN	Enable Bauer stereophonic-to-binaural DSP for this player

@@ -1,0 +1,12 @@
+[% PROCESS settings/header.html %]
+
+[% WRAPPER settingSection %]
+
+	[% WRAPPER setting title="Enable BS2B" desc="" %]
+		<input name="pref_bs2b" id="pref_bs2b" type="checkbox" [% IF prefs.pref_bs2b %] checked [% END %]>
+		<label for="pref_bs2b">[% "PLUGIN_BS2B_ENABLE" | string %]</label>
+	[% END %]
+
+[% END %]
+
+[% PROCESS settings/footer.html %]

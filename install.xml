@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<extension>
+  <name>PLUGIN_BS2B</name>
+  <module>Plugins::BS2B::Plugin</module>
+  <version>0.01</version>
+  <description>PLUGIN_BS2B_DESC</description>
+  <creator>Terual</creator>
+  <homepageURL>https://github.com/terual/BS2B</homepageURL>
+  <defaultState>enabled</defaultState>
+  <type>2</type>
+  <!-- type=extension -->
+  <targetApplication>
+    <id>SlimServer</id>
+    <minVersion>7.9</minVersion>
+    <maxVersion>8.*</maxVersion>
+  </targetApplication>
+</extension>
