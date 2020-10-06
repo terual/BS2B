@@ -1,0 +1,14 @@
+<extensions>
+  <details>
+    <title lang="EN">BS2B</title>
+  </details>
+  <plugins>
+    <plugin maxTarget="8.*" minTarget="7.9" name="DSDPlayer" target="unix" version="3.2">
+      <title lang="EN">BS2B</title>
+      <desc lang="EN">Bauer stereophonic-to-binaural DSP is designed to improve headphone listening of stereo audio records</desc>
+      <creator>Terual</creator>
+      <url>https://github.com/terual/test/releases/download/3.4/test-3.4.zip</url>
+      <sha>c1f44b844fd8d4d897963b8bc88fb5117af05566  test-3.4.zip</sha>
+    </plugin>
+  </plugins>
+</extensions>
