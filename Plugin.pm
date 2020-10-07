@@ -36,16 +36,19 @@ sub setupTranscoder {
 	if ($usebs2b) {
 		
 		# AU is specifically designed to be written to a pipe (http://www.mega-nerd.com/libsndfile/FAQ.html#Q017) 
-		my $cmdTable    = '[sox] -q -t flac $FILE$ -t au - $START$ | [bs2bconvert] /dev/stdin /dev/stdout | [sox] -q -t au - -t flac -C 0 -';
+		my $cmdTable    = '[sox] -q -t flac $FILE$ -t au - $START$ | [bs2bconvert] /dev/stdin /dev/stdout | [sox] -q -t au - -t flac -C 0 - ';
 		my $capabilities = { F => 'noArgs', T => 'START=trim %s' };
 
 		$Slim::Player::TranscodingHelper::commandTable{ $flc } = $cmdTable;
 		$Slim::Player::TranscodingHelper::capabilities{ $flc } = $capabilities;
 		
 	} else {
+
+		my $cmdTable    = '[flac] -dcs $START$ $END$ -- $FILE$ | [sox] -q -t wav - -t flac -C 0 -r 48000 - ';
+		my $capabilities = { F => 'noArgs', T => 'START=--skip=%t', U => 'END=--until=%v', D => 'RESAMPLE=-r %d' };
 		
-		$Slim::Player::TranscodingHelper::commandTable{ $flc } = "-";
-		$Slim::Player::TranscodingHelper::capabilities{ $flc } = {};
+		$Slim::Player::TranscodingHelper::commandTable{ $flc } = $cmdTable;
+		$Slim::Player::TranscodingHelper::capabilities{ $flc } = $capabilities;
 		
 	}		
 }
