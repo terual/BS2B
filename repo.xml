@@ -7,8 +7,8 @@
       <title lang="EN">BS2B</title>
       <desc lang="EN">Bauer stereophonic-to-binaural DSP is designed to improve headphone listening of stereo audio records</desc>
       <creator>Terual</creator>
-      <url>https://github.com/terual/BS2B/releases/download/0.3/BS2B-0.3.zip</url>
-      <sha>e18d2056140c53567aceb5f0f0727438ab0a530f</sha>
+      <url>https://github.com/terual/BS2B/releases/download/0.4/BS2B-0.4.zip</url>
+      <sha>f95e43a50d568562055574ffc1af3d8b197d4586</sha>
     </plugin>
   </plugins>
 </extensions>
