@@ -8,3 +8,18 @@ PLUGIN_BS2B_DESC
 
 PLUGIN_BS2B_ENABLE
 	EN	Enable Bauer stereophonic-to-binaural DSP for this player
+
+PLUGIN_BS2B_CROSSFEED_LEVEL
+	EN	Crossfeed level
+
+PLUGIN_BS2B_CROSSFEED_LEVEL_DESC
+	EN	Set the crossfeed level and cut-off frequency. The default preset is closest to the virtual speaker placement with azimuth 30 degrees and the removal of about 3 meters, while listening by headphones. Chu Moy's preset is is close to the parameters of a Chu Moy's crossfeeder. Jan Meier's preset is close to the parameters of a crossfeeder implemented in Jan Meier's CORDA amplifiers.
+
+PLUGIN_BS2B_CROSSFEED_LEVEL_DEFAULT
+	EN	Default (700Hz/260us, 4.5 dB)
+
+PLUGIN_BS2B_CROSSFEED_LEVEL_CHUMOY
+	EN	Chu Moy's preset (700Hz/260us, 6.0 dB)
+
+PLUGIN_BS2B_CROSSFEED_LEVEL_JANMEIER
+	EN	Jan Meier's preset (650Hz/280us, 9.5 dB)

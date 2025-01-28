@@ -30,17 +30,24 @@ sub page {
 }
 
 sub handler {
-    my ($class, $client, $params, $callback, @args) = @_;
-	
-    if ($params->{'saveSettings'}) {
+    my ($class, $client, $params) = @_;
 
-		$prefs->client($client)->set('bs2b', $params->{'pref_bs2b'} || 0);
+    if ( $client ) {
 
-		Plugins::BS2B::Plugin::setupTranscoder($client);
+        if ($params->{saveSettings}) {
+
+            $prefs->client($client)->set('bs2b', $params->{'pref_bs2b'} || 0);
+            $prefs->client($client)->set('bs2b_crossfeed_level', $params->{'pref_bs2b_crossfeed_level'} || 'd');
+
+        } 
+
+        $params->{prefs}->{pref_bs2b}                   = $prefs->client($client)->get('bs2b') || 0;
+        $params->{prefs}->{pref_bs2b_crossfeed_level}   = $prefs->client($client)->get('bs2b_crossfeed_level') || 'd';
+
+        Plugins::BS2B::Plugin::setupTranscoder($client);
+
     }
-	
-	$params->{'prefs'}->{'pref_bs2b'}= $prefs->client($client)->get('bs2b') || 0;
-	
+
     return $class->SUPER::handler($client, $params);
 }
 

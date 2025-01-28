@@ -2,9 +2,25 @@
 
 [% WRAPPER settingSection %]
 
-	[% WRAPPER setting title="Enable BS2B" desc="" %]
+	[% WRAPPER setting title="PLUGIN_BS2B" desc="PLUGIN_BS2B_DESC" %]
 		<input name="pref_bs2b" id="pref_bs2b" type="checkbox" [% IF prefs.pref_bs2b %] checked [% END %]>
 		<label for="pref_bs2b">[% "PLUGIN_BS2B_ENABLE" | string %]</label>
+	[% END %]
+
+	[% WRAPPER setting title="PLUGIN_BS2B_CROSSFEED_LEVEL" desc="PLUGIN_BS2B_CROSSFEED_LEVEL_DESC" %]
+	<p>
+		<input name="pref_bs2b_crossfeed_level" id="pref_bs2b_crossfeed_level" type="radio" value='d' [% IF prefs.pref_bs2b_crossfeed_level == 'd' %]checked[% END %]>
+		<label for="pref_bs2b_crossfeed_level_default">[% "PLUGIN_BS2B_CROSSFEED_LEVEL_DEFAULT" | string %]</label>
+	</p>
+	<p>
+		<input name="pref_bs2b_crossfeed_level" id="pref_bs2b_crossfeed_level" type="radio" value='c' [% IF prefs.pref_bs2b_crossfeed_level == 'c' %]checked[% END %]>
+		<label for="pref_bs2b_crossfeed_level_chumoy">[% "PLUGIN_BS2B_CROSSFEED_LEVEL_CHUMOY" | string %]</label>
+	</p>
+	<p>
+
+		<input name="pref_bs2b_crossfeed_level" id="pref_bs2b_crossfeed_level" type="radio" value='m' [% IF prefs.pref_bs2b_crossfeed_level == 'm' %]checked[% END %]>
+		<label for="pref_bs2b_crossfeed_level_janmeier">[% "PLUGIN_BS2B_CROSSFEED_LEVEL_JANMEIER" | string %]</label>
+	</p>
 	[% END %]
 
 [% END %]
