@@ -3,7 +3,7 @@
     <title lang="EN">BS2B</title>
   </details>
   <plugins>
-    <plugin maxTarget="8.*" minTarget="7.9" name="BS2B" target="unix" version="0.2">
+    <plugin maxTarget="*" minTarget="7.9" name="BS2B" target="unix" version="0.4">
       <title lang="EN">BS2B</title>
       <desc lang="EN">Bauer stereophonic-to-binaural DSP is designed to improve headphone listening of stereo audio records</desc>
       <creator>Terual</creator>
