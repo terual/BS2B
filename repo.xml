@@ -4,12 +4,12 @@
     <title lang="EN">Bauer stereophonic-to-binaural DSP</title>
   </details>
   <plugins>
-    <plugin maxTarget="*" minTarget="7.9" name="BS2B" target="unix" version="0.5">
+    <plugin maxTarget="*" minTarget="7.9" name="BS2B" target="unix" version="0.6">
       <title lang="EN">Bauer stereophonic-to-binaural DSP</title>
       <desc lang="EN">Bauer stereophonic-to-binaural DSP is designed to improve headphone listening of stereo audio records</desc>
       <creator>Terual</creator>
-      <url>https://github.com/terual/BS2B/releases/download/0.5/BS2B-0.5.zip</url>
-      <sha>10373128122f441e723d73e7ee3f9afc4046f27a</sha>
+      <url>https://github.com/terual/BS2B/releases/download/0.6/BS2B-0.6.zip</url>
+      <sha>6b9df4c3f327d8f3614e093e7c6a4cb8aae09005</sha>
     </plugin>
   </plugins>
 </extensions>

@@ -2,7 +2,7 @@
 <extension>
   <name>PLUGIN_BS2B</name>
   <module>Plugins::BS2B::Plugin</module>
-  <version>0.5</version>
+  <version>0.6</version>
   <description>PLUGIN_BS2B_DESC</description>
   <creator>Terual</creator>
   <homepageURL>https://github.com/terual/BS2B</homepageURL>
