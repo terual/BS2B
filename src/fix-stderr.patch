@@ -14,7 +14,7 @@
 -		printf( "Not able to open input file %s.\n", infilename );
 -		printf( sf_strerror( NULL ) );
 +		fprintf( stderr, "Not able to open input file %s.\n", infilename );
-+		fprintf( stderr, sf_strerror( NULL ) );
++		fprintf( stderr, "%s", sf_strerror( NULL ) );
  		return 1;
  	}
  
