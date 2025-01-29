@@ -1,0 +1,10 @@
+--- libbs2b-3.1.0/configure.ac.orig	2025-01-29 14:09:32.283803177 +0100
++++ libbs2b-3.1.0/configure.ac	2025-01-29 14:11:04.927240617 +0100
+@@ -27,7 +27,6 @@
+ AC_TYPE_SIZE_T
+ 
+ # Checks for library functions.
+-AC_FUNC_MALLOC
+ AC_CHECK_FUNCS([strrchr])
+ 
+ AC_CONFIG_FILES([libbs2b.pc
