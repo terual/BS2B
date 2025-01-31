@@ -6,4 +6,4 @@ RUN sed -i -e 's/http/[arch=amd64] http/g' /etc/apt/sources.list
 
 RUN dpkg --add-architecture arm64 && \
 	apt-get -y update && apt-get -y upgrade
-RUN apt-get install -y build-essential libtool gcc gcc-aarch64-linux-gnu g++ make automake autoconf libsndfile-dev:arm64
+RUN apt-get install -y build-essential gcc gcc-aarch64-linux-gnu make libsndfile-dev:arm64
